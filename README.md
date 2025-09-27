@@ -35,7 +35,7 @@ square-loyalty/
 │   ├── .env.local       # Frontend config (ignored in git)
 │   └── .gitignore
 └── README.md
-
+```
 ---
 
 ## ⚙️ Backend Setup
