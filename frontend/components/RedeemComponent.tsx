@@ -30,7 +30,8 @@ export const RedeemComponent: React.FC<RedeemComponentProps> = ({ fetchDashboard
             fetchDashboardData();
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (err: any) {
-            setError(err.response?.data?.error || "Failed to redeem points");
+            console.log(err);
+            setError(err.response?.data?.message || "Failed to redeem points");
         } finally {
             setRedeemLoading(false);
         }
@@ -39,10 +40,9 @@ export const RedeemComponent: React.FC<RedeemComponentProps> = ({ fetchDashboard
     return (
         <div className="bg-white p-6 rounded-2xl shadow-sm">
             <h2 className="font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                <Gift className="w-5 h-5 text-green-500" />
+                <Gift className="w-5 h-5 text-purple-500" />
                 Redeem Points
             </h2>
-
             <form onSubmit={handleRedeemPoints} className="flex flex-col gap-2">
                 <Input
                     type="number"
@@ -57,7 +57,7 @@ export const RedeemComponent: React.FC<RedeemComponentProps> = ({ fetchDashboard
                 />
                 <Button
                     type="submit"
-                    className="bg-gradient-to-r from-green-500 to-green-800 text-white font-semibold py-2 rounded-lg hover:opacity-85 transition flex items-center justify-center gap-2"
+                    className="bg-gradient-to-r from-purple-400 to-purple-700 text-white font-semibold py-2 rounded-lg hover:opacity-85 transition flex items-center justify-center gap-2"
                 >
                     <Gift className="w-5 h-5" />
                     {redeemLoading ? <Loader size={16} /> : 'Redeem'}

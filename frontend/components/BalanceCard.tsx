@@ -1,4 +1,9 @@
+import { rewardTiers } from "../utils/constants"
+
 export const BalanceCard: React.FC<{ balance: number }> = ({ balance }) => {
+
+    const currentTier = rewardTiers.find(tier => balance <= tier.pointsRequired) || rewardTiers[1];
+
     return (
         <div className="bg-white p-6 rounded-2xl shadow-sm">
             <p className="text-gray-600">Your current loyalty balance:</p>
@@ -7,11 +12,11 @@ export const BalanceCard: React.FC<{ balance: number }> = ({ balance }) => {
             </p>
             <div className="mt-4">
                 <div className="w-full bg-gray-200 rounded-full h-3 dark:bg-gray-700">
-                    <div className="bg-indigo-500 h-3 rounded-full" style={{ width: `${(balance / 500) * 100}%` }}></div>
+                    <div className="bg-indigo-500 h-3 rounded-full" style={{ width: `${(balance / currentTier.pointsRequired) * 100}%` }}></div>
                 </div>
                 <p className="text-sm text-gray-500 mt-2">
                     Progress to Next Tier:{" "}
-                    <span className="font-medium">{500 - balance} points</span> remaining
+                    <span className="font-medium">{currentTier.pointsRequired - balance} points</span> remaining
                 </p>
             </div>
         </div>
