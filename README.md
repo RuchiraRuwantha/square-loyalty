@@ -21,7 +21,7 @@ The project includes:
 ---
 
 ## 📁 Project Structure
-
+```
 square-loyalty/
 ├── backend/             # Express server (mock/proxy API)
 │   ├── index.js
