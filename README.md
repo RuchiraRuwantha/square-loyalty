@@ -109,10 +109,10 @@ NEXT_PUBLIC_API_URL=http://localhost:5000/api
 
   ```json
   {
-    id: 'acc-123',
-    phone_number: '+14155551234',
-    balance: 10,
-    program_id: 'program-1',
+    "id": "acc-123",
+    "phone_number": "+14155551234",
+    "balance": 10,
+    "program_id": "program-1"
   }
   ```
 
