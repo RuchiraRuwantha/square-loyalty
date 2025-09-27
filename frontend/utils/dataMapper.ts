@@ -1,4 +1,5 @@
-import { activityTypes, iLoyaltyActivity } from "./interfaces";
+import { activityTypes } from "./constants";
+import { iLoyaltyActivity } from "./interfaces";
 
 const mapApiDataToiLoyaltyActivity = (dataObject: { [key: string]: string }): iLoyaltyActivity => {
     const tempDate = new Date(dataObject.created_at || '');
