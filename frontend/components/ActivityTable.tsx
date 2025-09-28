@@ -44,7 +44,7 @@ export const ActivityTable: React.FC<ActivityTableProps> = ({ activities, loadin
                                         ) :
                                         activities.length > 0 ?
                                             activities.map((a, i) => (
-                                                <tr key={i} className="odd:bg-blue-50">
+                                                <tr key={i} className="odd:bg-blue-50" data-test="activity-row">
                                                     <td className="sm:pl-2 py-2">{a.date}</td>
                                                     <td className={`py-2 font-medium md:text-left text-right 
                                                 ${a.type === activityTypes['EARN'] ? 'text-green-600'

@@ -7,7 +7,7 @@ export const BalanceCard: React.FC<{ balance: number }> = ({ balance }) => {
     return (
         <div className="bg-white p-6 rounded-2xl shadow-sm">
             <p className="text-gray-600">Your current loyalty balance:</p>
-            <p className="text-4xl font-bold text-indigo-600 flex items-center gap-2">
+            <p className="text-4xl font-bold text-indigo-600 flex items-center gap-2" data-test="balance-value">
                 {balance} <span className="text-xl text-gray-500">points</span>
             </p>
             <div className="mt-4">

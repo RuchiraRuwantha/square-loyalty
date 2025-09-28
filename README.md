@@ -5,6 +5,7 @@ The project includes:
 
 - **Frontend:** Next.js + TypeScript + TailwindCSS  
 - **Backend:** Node.js (Express) with in-memory cache (Node Cache) to simulate/mimic Square API  
+- **Testing:** Cypress for end-to-end (E2E) and integration tests  
 
 ---
 
@@ -17,6 +18,7 @@ The project includes:
 - 📜 **Activity Table** showing **EARN**, **REDEEM**, and **ADJUSTMENT** history (scrollable with sticky headers)  
 - 🔒 **Protected Routes** (Dashboard requires login) using Next.js middleware  
 - 🚪 **Logout** (clears session and cookie)  
+- ✅ **Cypress Tests** cover Login, Earn Points, Redeem Points, and Logout 
 
 ---
 
@@ -28,9 +30,13 @@ square-loyalty/
 │   ├── package.json
 │   ├── .env             # Backend secrets (ignored in git)
 │   └── .gitignore
-├── frontend/            # Next.js app (TypeScript, Tailwind)
+├── frontend/            # Next.js app (TypeScript, Tailwind, Cypress tests)
 │   ├── app/
 │   ├── components/
+│   ├── cypress/
+│   │   ├── e2e/ # Cypress test specs
+│   │   ├── support/ # Custom commands + TS types
+│   │   └── fixtures/ # Sample test data
 │   ├── package.json
 │   ├── .env.local       # Frontend config (ignored in git)
 │   └── .gitignore
@@ -69,6 +75,47 @@ npm run dev
 ```
 NEXT_PUBLIC_API_URL=http://localhost:5000/api
 ```
+
+---
+
+## 🧪 Testing with Cypress
+
+We use **Cypress** for end-to-end testing.
+
+### Run Cypress in interactive mode:
+
+```bash
+cd frontend
+npx cypress open
+```
+
+### Run Cypress tests headless (CI mode):
+
+```bash
+cd frontend
+npx cypress run
+```
+
+### Covered Test Cases:
+
+* **Login**
+
+  * Successful login with valid phone
+  * Error on invalid phone format
+* **Earn Points**
+
+  * Earn points with valid order ID
+  * Error on missing order ID
+  * Error on invalid order ID (mocked API error)
+* **Redeem Points**
+
+  * Redeem by points input
+  * Error when not enough points
+* **Logout**
+
+  * Logout redirects to login
+  * Clears session from localStorage + cookie
+  * Protected routes blocked after logout
 
 ---
 
