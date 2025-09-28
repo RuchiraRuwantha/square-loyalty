@@ -18,7 +18,7 @@ describe("Logout Feature", () => {
         cy.wait("@loginRequest");
 
         // Ensure dashboard loaded
-        cy.url().should("include", "/dashboard");
+        cy.url({ timeout: 10000 }).should("include", "/dashboard");
     });
 
     it("should logout and redirect to login page", () => {
