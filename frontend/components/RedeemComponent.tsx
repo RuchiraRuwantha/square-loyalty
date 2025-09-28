@@ -54,10 +54,12 @@ export const RedeemComponent: React.FC<RedeemComponentProps> = ({ fetchDashboard
                     }}
                     required
                     error={error || undefined}
+                    data-test="redeem-input"
                 />
                 <Button
                     type="submit"
                     className="bg-gradient-to-r from-purple-400 to-purple-700 text-white font-semibold py-2 rounded-lg hover:opacity-85 transition flex items-center justify-center gap-2"
+                    data-test="redeem-button"
                 >
                     <Gift className="w-5 h-5" />
                     {redeemLoading ? <Loader size={16} /> : 'Redeem'}

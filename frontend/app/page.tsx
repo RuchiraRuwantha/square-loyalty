@@ -60,12 +60,14 @@ export default function LoginPage() {
               required
               label="Phone Number (E.164 format)"
               error={error || undefined}
+              data-test="phone-input"
             />
           </div>
 
           <Button
             type="submit"
             className="w-full py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold shadow-lg hover:opacity-90 transition active:scale-95"
+            data-test="login-button"
           >
             {loading ? <Loader /> : 'Login'}
           </Button>

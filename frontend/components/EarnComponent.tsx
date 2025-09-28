@@ -54,10 +54,12 @@ export const EarnComponent: React.FC<EarnComponentProps> = ({ fetchDashboardData
                         setError(null)
                     }}
                     error={error || undefined}
+                    data-test="order-id-input"
                 />
                 <Button
                     type="submit"
                     className="bg-gradient-to-r from-blue-400 to-blue-700 text-white font-semibold py-2 rounded-lg hover:opacity-85 transition flex items-center justify-center gap-2"
+                    data-test="earn-button"
                 >
                     <PlusCircle className="w-5 h-5" />
                     {earnLoading ? <Loader size={16} /> : 'Earn Points'}

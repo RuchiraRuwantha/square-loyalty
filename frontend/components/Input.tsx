@@ -29,7 +29,7 @@ export const Input: React.FC<InputProps> = ({ label, id, value, onChange, type =
                     }`}
                 {...rest}
             />
-            <div className="h-4">
+            <div className="h-4" data-test="input-error-message">
                 {error && <ErrorMessage message={error} /> }
             </div>
 
