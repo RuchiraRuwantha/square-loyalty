@@ -15,7 +15,6 @@ describe("Redeem Points Feature", () => {
     it("should allow redeeming points by entering number", () => {
         cy.wait(500);
         cy.getBySel("balance-value").invoke("text").then((initialBalanceText) => {
-            console.log(initialBalanceText);
             const initialBalance = parseInt(initialBalanceText.split(" ")[0]);
 
             cy.getBySel("redeem-input").type("5");
