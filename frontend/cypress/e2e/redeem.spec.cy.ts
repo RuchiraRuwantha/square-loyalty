@@ -4,9 +4,7 @@ describe("Redeem Points Feature", () => {
         cy.getBySel("phone-input").type("+14155551234");
         cy.getBySel("login-button").click();
 
-        // cy.intercept("GET", "/api/accounts/*").as("balanceRequest");
         cy.url({ timeout: 10000 }).should("include", "/dashboard");
-        // cy.wait("@balanceRequest");
     });
 
     it("should display redeem form options", () => {
